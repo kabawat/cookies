@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cookiesParser());
 app.use(
   cors({
-    origin: "http://192.168.0.2:3000",
+    origin: "https://cookietry.netlify.app",
     credentials: true,
   })
 );
