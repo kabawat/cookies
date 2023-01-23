@@ -12,7 +12,10 @@ app.use(
   })
 );
 app.use(express.urlencoded({ extended: true }));
-
+app.use((req,res,next)=>{
+    res.header("Access-Control-Allow-Origin",req.headers.origin);
+    next();
+});
 app.get("/", (req, res) => {
   res.send("hello");
 });
