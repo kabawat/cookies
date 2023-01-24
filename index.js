@@ -31,8 +31,13 @@ app.post("/login", (req, res) => {
 //    domain:"cookietrytwo.netlify.com"
 // });
 
-  res.setHeader("Set-Cookie", "authrrrrr=tokenrrrrr; SameSite=None; Secure; Max-Age=604800; Path=/;");
-
+//   res.setHeader("Set-Cookie", "authrrrrr=tokenrrrrr; SameSite=None; Secure; Max-Age=604800; Path=/;");
+res.cookie('myCookie', 'myValue', { 
+        maxAge: 900000, 
+        httpOnly: true, 
+        sameSite: 'None',
+        secure:true
+    });
 
 
   res.status(200).send(req.body);
