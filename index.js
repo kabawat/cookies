@@ -28,6 +28,7 @@ app.post("/login", (req, res) => {
     secure: true,
     maxAge: 7*24*60*60*1000,
     path: "/",
+   domain:"cookietrytwo.netlify.com"
 });
 
   res.setHeader("Set-Cookie", "authrrrrr=tokenrrrrr; SameSite=None; Secure; Expires=7; path=/; domain=cookietrytwo.netlify.com");
