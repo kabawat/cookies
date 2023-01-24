@@ -23,6 +23,10 @@ app.post("/login", (req, res) => {
   console.log(req.body);
   res.setHeader("Set-Cookie", "auth=token; SameSite=None; Secure");
   res.cookie('username', 'john doe', { sameSite:"none", secure:true});
+  res.cookie('usernamerrrr', 'john doerrrr', { sameSite:"none", secure:true, expires: new Date(Date.now() + 900000)});
+  res.setHeader("Set-Cookie", "authrrrrr=tokenrrrrr; SameSite=None; Secure; Expires=Thu, 18 Dec 2024 12:00:00 UTC");
+
+
   res.status(200).send(req.body);
 });
 
