@@ -16,10 +16,8 @@ app.use(cors({
 }));
 app.post("/login", (req, res) => {
     res.cookie('myCookie', 'myValue', { 
-        maxAge: 900000, 
+        maxAge: 9000400, 
         httpOnly: true, 
-        sameSite: 'None',
-        secure:true
     });
     res.status(200).send(req.body);
 });
