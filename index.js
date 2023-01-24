@@ -22,9 +22,11 @@ app.post("/login", (req, res) => {
   // res.header["Access-Control-Allow-Origin"] = "https://cookiestry.netlify.app";
   console.log(req.body);
 //   res.setHeader("Set-Cookie", "auth=token SameSite=None; Secure");
-  res.cookie('username', 'john doe', { sameSite:"none", secure:true ,maxAge: 900000, httpOnly: false });
-  res.send(req.body);
+  res.cookie('username', 'john doe', { sameSite:"none", secure:true});
+  res.send(req.cookie);
 });
+
+
 app.listen(port, () => {
   console.log(`http://192.168.0.5:${port}`);
 });
