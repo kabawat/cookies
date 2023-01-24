@@ -13,6 +13,7 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "https://cookiestry.netlify.app");
   res.header("Access-Control-Allow-Credentials", true);
   res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Access-Control-Allow-Headers", "withCredentials");
   next();
 });
 app.post("/login", (req, res) => {
