@@ -46,6 +46,15 @@ app.get("/getter", (req, res) => {
   res.status(200).send("Cookies found")
 });
 
+app.get("/deleter", (req, res) => {
+  let cookies = req.cookies;
+  if(!cookies){
+  res.status(401).send("Error")
+  }
+  res.clearCookie('authrrrrr');
+  res.status(200).send("Cookies Deleted")
+});
+
 
 
 app.listen(port, () => {
