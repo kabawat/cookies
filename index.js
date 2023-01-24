@@ -23,7 +23,7 @@ app.post("/login", (req, res) => {
   console.log(req.body);
   res.setHeader("Set-Cookie", "auth=token; SameSite=None; Secure");
   res.cookie('username', 'john doe', { sameSite:"none", secure:true});
-  res.send("Success");
+  res.status(200).send(req.body);
 });
 
 
