@@ -36,6 +36,12 @@ app.post("/login", (req, res) => {
   res.status(200).send(req.body);
 });
 
+app.get("/getter", (req, res) => {
+  let cookies = req.cookies;
+  res.json(cookies);
+});
+
+
 
 app.listen(port, () => {
   console.log(`http://192.168.0.5:${port}`);
