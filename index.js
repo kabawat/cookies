@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 // app.use(cookiesParser());
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://cookiestry.netlify.app");
+  res.header("Access-Control-Allow-Origin", "https://cookiestry.netlify.app, https://cookietrytwo.netlify.app");
   res.header("Access-Control-Allow-Credentials", true);
   res.header("Access-Control-Allow-Headers", "content-type, withCredentials, Content-Type, withcredentials");
   next();
