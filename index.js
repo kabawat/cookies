@@ -21,8 +21,6 @@ app.use(function (req, res, next) {
 app.post("/login", (req, res) => {
   // res.header["Access-Control-Allow-Origin"] = "https://cookiestry.netlify.app";
   console.log(req.body);
-  res.setHeader("Set-Cookie", "auth=token; SameSite=None; Secure");
-  res.cookie("username", "john doe", { sameSite: "none", secure: true });
   res.cookie("usernamerrrr", "john doerrrr", {
     sameSite: "none",
     secure: true,
