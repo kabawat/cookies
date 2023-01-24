@@ -19,19 +19,6 @@ app.use(function (req, res, next) {
 });
 
 app.post("/login", (req, res) => {
-  // res.header["Access-Control-Allow-Origin"] = "https://cookiestry.netlify.app";
-//   console.log(req.body);
-//   res.setHeader("Set-Cookie", "auth=token; SameSite=None; Secure");
-//   res.cookie('username', 'john doe', { sameSite:"none", secure:true});
-//  res.cookie("usernamerrrr", "john doerrrr", {
-//     sameSite: "none",
-//     secure: true,
-//     maxAge: 7*24*60*60*1000,
-//     path: "/",
-//    domain:"cookietrytwo.netlify.com"
-// });
-
-//   res.setHeader("Set-Cookie", "authrrrrr=tokenrrrrr; SameSite=None; Secure; Max-Age=604800; Path=/;");
 res.cookie('myCookie', 'myValue', { 
         maxAge: 900000, 
         httpOnly: true, 
@@ -52,8 +39,7 @@ app.get("/getter", (req, res) => {
 });
 
 app.get("/deleter", (req, res) => {
-  let cookies = req.cookies;
-  if(!cookies){
+  if(!req.cookies){
   res.status(401).send("Error")
   }
   res.clearCookie('authrrrrr');
