@@ -21,17 +21,15 @@ app.use(function (req, res, next) {
 app.post("/login", (req, res) => {
   // res.header["Access-Control-Allow-Origin"] = "https://cookiestry.netlify.app";
   console.log(req.body);
-  res.setHeader("Set-Cookie", "auth=token; SameSite=None; Secure");
-  res.cookie('username', 'john doe', { sameSite:"none", secure:true});
- res.cookie("usernamerrrr", "john doerrrr", {
+  const expires = new Date();
+expires.setDate(expires.getDate() + 7);
+res.cookie("usernamerrrr", "john doerrrr", {
     sameSite: "none",
     secure: true,
-    maxAge: 7*24*60*60*1000,
+    maxAge: expires,
     path: "/",
    domain:"cookietrytwo.netlify.com"
 });
-
-  res.setHeader("Set-Cookie", "authrrrrr=tokenrrrrr; SameSite=None; Secure; Expires=7; path=/; domain=cookietrytwo.netlify.com");
 
 
   res.status(200).send(req.body);
