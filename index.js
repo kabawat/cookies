@@ -20,7 +20,7 @@ app.post("/login", (req, res) => {
         httpOnly: true, 
         sameSite : "none",
         secure: true,
-      domain: 'https://cookietrytwot.netlify.app'
+      domain: 'cookietrytwot.netlify.app'
     });
     res.status(200).json(req.body);
 });
