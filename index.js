@@ -2,8 +2,10 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 2917;
 const cors = require("cors");
+let cookieParser = require('cookie-parser')
 // const cookiesParser = require("cookie-parser");
 app.use(express.json());
+app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.send("hello");
@@ -19,7 +21,8 @@ app.use(function (req, res, next) {
 app.post("/login", (req, res) => {
   // res.header["Access-Control-Allow-Origin"] = "https://cookiestry.netlify.app";
   console.log(req.body);
-  res.setHeader("Set-Cookie", "auth=token SameSite=None; Secure");
+//   res.setHeader("Set-Cookie", "auth=token SameSite=None; Secure");
+  res.cookie('username', 'john doe', { sameSite:"none", secure:true ,maxAge: 900000, httpOnly: false });
   res.send(req.body);
 });
 app.listen(port, () => {
