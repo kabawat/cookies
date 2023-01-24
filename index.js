@@ -14,6 +14,8 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Credentials", true);
   res.header("Access-Control-Allow-Headers", "Content-Type");
   res.header("Access-Control-Allow-Headers", "withCredentials");
+  res.header("Access-Control-Allow-Headers", "content-type");
+  
   next();
 });
 app.post("/login", (req, res) => {
