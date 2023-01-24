@@ -16,7 +16,7 @@ app.use(cors({
 }));
 app.post("/login", (req, res) => {
     res.cookie('myCookie', 'myValue', { 
-        maxAge: 9000000000000400, 
+         expires: new Date(Date.now() + 5 * 24 *60  *60  *1000),
         httpOnly: true, 
     });
     res.status(200).json(req.body);
