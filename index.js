@@ -19,7 +19,8 @@ app.post("/login", (req, res) => {
          expires: new Date(Date.now() + 5 * 24 *60  *60  *1000),
         httpOnly: true, 
         sameSite : "none",
-        secure: true
+        secure: true,
+      domain: 'https://cookietrytwot.netlify.app'
     });
     res.status(200).json(req.body);
 });
