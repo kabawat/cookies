@@ -11,7 +11,8 @@ app.get("/", (req, res) => {
 });
 app.use(cors({
     origin: 'https://cookietrytwot.netlify.app',
-    credentials: true
+    credentials: true,
+  exposedHeaders: ["set-cookie"],
 }));
 app.post("/login", (req, res) => {
     res.cookie('myCookie', 'myValue', { 
