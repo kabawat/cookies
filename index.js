@@ -24,8 +24,7 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/getter", (req, res) => {
-    let cookies = req.cookies;
-    if(!cookies){
+    if(!req.cookies){
     res.status(401).send("Error")
     }
     res.status(200).send("Cookies found")
